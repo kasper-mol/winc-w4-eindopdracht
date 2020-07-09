@@ -8,6 +8,7 @@ test("A word has been chosen", function () {
 })
 
 test("does the word contain the letter", function () {
-    console.log(theWord(['t', 'o', 'e', 't', 'e', 'r'], ['e', 'b', 'r']))
-    expect(theWord(['t', 'o', 'e', 't', 'e', 'r'], ['e', 'b', 'r'])).not.toBeNull()
+    const expected = ['e', 'o']
+    console.log(theWord(['t', 'o', 'e', 't', 'e', 'r'], ['e', 'o']))
+    expect(theWord(['t', 'o', 'e', 't', 'e', 'r'], ['e', 'o'])).toEqual(expect.arrayContaining(expected))
 })

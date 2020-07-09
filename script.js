@@ -78,9 +78,10 @@ const theWord = function (word, inputLetterWords) {
       return "_";
     }
   });
+  return display
   //document.querySelector(".the_word").innerHTML = display.join(" ");
 };
-
+theWord(['t', 'o', 'e', 't', 'e', 'r'], ['e'])
 
 // Checks if guessed letter is in word
 const checkGuess = (input1, inputs) => {
@@ -144,14 +145,14 @@ function beginTheGameWithPlayer(player1) {
 
 
 // Eventlistners
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".guess").addEventListener("click", guessLetter);
   document
     .querySelector(".restart")
     .addEventListener("click", beginTheGameWithPlayer);
   beginTheGameWithPlayer();
 });
-
+*/
 module.exports = {
   wordpicker,
   wordList,
