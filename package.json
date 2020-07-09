@@ -1,15 +1,15 @@
 {
-    "name": "winc-w4-eindopdracht",
-    "version": "1.0.0",
-    "description": "",
-    "main": "script.js",
-    "scripts": {
-        "test": "jest"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "jest": "^26.1.0"
-    }
+  "name": "winc-w4-eindopdracht",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.1.0"
+  }
 }
