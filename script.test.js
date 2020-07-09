@@ -1,6 +1,14 @@
-const { wordpicker, wordList, letters, theWord } = require("./script.js");
+let {
+  wordpicker,
+  wordList,
+  letters,
+  theWord,
+  tries,
+  word,
+  checkGuess,
+} = require("./script.js");
 
-test("A word has been chosen", function () {
+/* test("A word has been chosen", function () {
   expect(wordpicker(wordList)).not.toBeNull();
 });
 
@@ -9,4 +17,9 @@ test("does the word contain the letter", function () {
   expect(
     theWord(["t", "o", "e", "t", "e", "r"], ["e", "b", "r"])
   ).not.toBeNull();
+}); */
+
+test("if the tries of the user are updated", function () {
+  let word = ["t", "o", "e", "t", "e", "r"];
+  expect(checkGuess("q")).toEqual(1);
 });
