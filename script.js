@@ -77,7 +77,7 @@ const theWord = function (word, inputLetterWords) {
     }
   });
   return display;
-  //document.querySelector(".the_word").innerHTML = display.join(" ");
+  document.querySelector(".the_word").innerHTML = display.join(" ");
 };
 
 
