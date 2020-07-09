@@ -12,15 +12,15 @@ const wordList = [
   "snoer",
   "geeuw"
 ];
-let maxAmount = 5;
+//let maxAmount = 5;
 
-let word;
+//let word;
+
+// Choosing a rondom word
 const wordpicker = function (list) {
-  let word = "sinaasappel";
   let index = Math.floor(Math.random() * list.length);
-  const x = list;
-  console.log("wat ben ik?", word);
-  return x[index];
+  const randomWoord = list[index];
+  return randomWoord;
 };
 
 let inputs;
@@ -60,13 +60,15 @@ const updateTriesDisplay = function (tries) {
   document.querySelector(".lives span").innerHTML = 5 - tries;
 };
 
+// Check if letter is in the word, if not add to worng guessed letters
 const letters = function (word, inputs) {
-  let wrongLetters = inputs.filter(function (letter) {
-    // If the letter is in the word return.... false/true (we want to remove that then)
+  let letterCheck = (letter) => {
     return !word.includes(letter);
-  });
+  };
+  let wrongLetters = inputs.filter(letterCheck)
   document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
 };
+
 
 const theWord = function (word, inputLetterWords) {
   let display = word.map(function (letter) {
@@ -79,12 +81,14 @@ const theWord = function (word, inputLetterWords) {
   document.querySelector(".the_word").innerHTML = display.join(" ");
 };
 
+
+// Called on guess
 const guessLetter = function () {
   if (gameOver) {
     return;
   }
   const input1 = document.querySelector("input").value;
-  document.querySelector("input").value = "";
+  //document.querySelector("input").value = "";
 
   if (inputs.includes(input1) || input1 === "") {
     return;
@@ -112,6 +116,7 @@ function getThePlayer(player) {
   return play;
 }
 
+// Starting the game, on load
 function beginTheGameWithPlayer(player1) {
   getThePlayer(player1);
   gameOver = false;
@@ -131,6 +136,8 @@ function beginTheGameWithPlayer(player1) {
   letters(word, inputs);
 }
 
+
+// Eventlistners
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector(".guess").addEventListener("click", guessLetter);
   document
@@ -142,4 +149,5 @@ document.addEventListener("DOMContentLoaded", function () {
 module.exports = {
   wordpicker,
   wordList,
+  letters
 }
