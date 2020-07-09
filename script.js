@@ -78,8 +78,21 @@ const theWord = function (word, inputLetterWords) {
       return "_";
     }
   });
-  document.querySelector(".the_word").innerHTML = display.join(" ");
+  //document.querySelector(".the_word").innerHTML = display.join(" ");
 };
+
+
+// Checks if guessed letter is in word
+const checkGuess = (input1, inputs) => {
+  if (inputs.includes(input1) || input1 === "") {
+    return;
+  }
+
+  if (!word.includes(input1)) {
+    tries++;
+    document.querySelector(".lives span").innerHTML = 5 - tries;
+  }
+}
 
 
 // Called on guess
@@ -89,15 +102,8 @@ const guessLetter = function () {
   }
   const input1 = document.querySelector("input").value;
   //document.querySelector("input").value = "";
+  checkGuess(input1, inputs)
 
-  if (inputs.includes(input1) || input1 === "") {
-    return;
-  }
-
-  if (!word.includes(input1)) {
-    tries++;
-    document.querySelector(".lives span").innerHTML = 5 - tries;
-  }
 
   inputs.push(input1);
   theWord(word, inputs);
@@ -149,5 +155,6 @@ document.addEventListener("DOMContentLoaded", function () {
 module.exports = {
   wordpicker,
   wordList,
+  theWord,
   letters
 }
