@@ -1,5 +1,5 @@
 // Space for global variables
-// allTheWords = []
+let inputs = [];
 
 // List of possible words
 const wordList = [
@@ -22,7 +22,7 @@ const wordpicker = function (list) {
   return randomWoord;
 };
 
-let inputs;
+
 const wordGuessed = function (word, inputs) {
   // remove all letters from word that are already guessed
   // We can do this with a for loop to.
@@ -59,15 +59,18 @@ const updateTriesDisplay = function (tries) {
   document.querySelector(".lives span").innerHTML = 5 - tries;
 };
 
-// Check if letter is in the word, if not add to worng guessed letters
+// Check if letter is in the word, if not add to wrong guessed letters
 const letters = function (word, inputs) {
   let letterCheck = (letter) => {
     return !word.includes(letter);
   };
   let wrongLetters = inputs.filter(letterCheck);
-  document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
+  //document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
+  return wrongLetters;
 };
 
+
+// Displays the correctly guessed letters
 const theWord = function (word, inputLetterWords) {
   let display = word.map(function (letter) {
     if (inputLetterWords.includes(letter)) {
@@ -77,7 +80,6 @@ const theWord = function (word, inputLetterWords) {
     }
   });
   document.querySelector(".the_word").innerHTML = display.join(" ");
-  return display;
 
 };
 
@@ -103,6 +105,7 @@ const guessLetter = function () {
   checkGuess(input1, inputs);
 
   inputs.push(input1);
+  console.log(inputs)
   theWord(word, inputs);
   letters(word, inputs);
 
@@ -119,6 +122,7 @@ const guessLetter = function () {
   return play;
 } */
 
+
 // Starting the game, on load
 function beginTheGameWithPlayer() {
   //getThePlayer(player1);
@@ -134,7 +138,6 @@ function beginTheGameWithPlayer() {
   word = wordpicker(wordList).split("");
   document.querySelector(".lose p span").innerHTML = `"${word.join("")}"`;
   //word;
-  inputs = [];
 
   theWord(word, inputs);
   letters(word, inputs);
@@ -154,4 +157,5 @@ module.exports = {
   wordList,
   theWord,
   letters,
+  inputs
 };
