@@ -52,7 +52,11 @@ const letters = function (word, triedLettersArray) {
   let letterCheck = (letter) => {
     return !word.includes(letter);
   };
+<<<<<<< HEAD
   let wrongLetters = triedLettersArray.filter(letterCheck);
+=======
+  let wrongLetters = inputs.filter(letterCheck);
+>>>>>>> 479b0f453907db8e484eb8950dc6cabcdae798ae
   document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
   return wrongLetters;
 };
@@ -72,6 +76,7 @@ const theWord = function (word, inputLetterWords) {
 
 // Checks if a new letter is guessed
 const guessLetter = function () {
+<<<<<<< HEAD
   const letterTry = inputTextField.value;
   inputTextField.value = "";
   if (triedLetters.includes(letterTry) || letterTry === "") return;
@@ -82,6 +87,27 @@ const guessLetter = function () {
   letters(chosenWord, triedLetters);
   checkForWinningOrLosing();
 };
+=======
+  /*   if (gameOver) {
+    return;
+  } */
+
+  const input1 = document.querySelector("input").value;
+  document.querySelector("input").value = "";
+  if (inputs.includes(input1) || input1 === "") {
+    return;
+  }
+
+  if (!word.includes(input1)) {
+    tries++;
+    document.querySelector(".lives span").innerHTML = 5 - tries;
+  }
+
+  inputs.push(input1);
+  console.log(inputs)
+  theWord(word, inputs);
+  letters(word, inputs);
+>>>>>>> 479b0f453907db8e484eb8950dc6cabcdae798ae
 
 //Function that checks if the game is won or lost
 const checkForWinningOrLosing = function () {
