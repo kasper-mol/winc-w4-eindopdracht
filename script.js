@@ -83,8 +83,14 @@ const theWord = function (word, inputLetterWords) {
 
 };
 
+// Checks if guessed letter is in word
+const guessLetter = function () {
+  /*   if (gameOver) {
+    return;
+  } */
 
-const checkGuess = (input1, inputs) => {
+  //const input1 = document.querySelector("input").value;
+  document.querySelector("input").value = "";
   if (inputs.includes(input1) || input1 === "") {
     return;
   }
@@ -93,16 +99,6 @@ const checkGuess = (input1, inputs) => {
     tries++;
     document.querySelector(".lives span").innerHTML = 5 - tries;
   }
-};
-
-// Called on guess
-const guessLetter = function () {
-  /* if (gameOver) {
-    return;
-  } */
-  const input1 = document.querySelector("input").value;
-  document.querySelector("input").value = "";
-  checkGuess(input1, inputs);
 
   inputs.push(input1);
   console.log(inputs)
@@ -132,7 +128,7 @@ function beginTheGameWithPlayer() {
   document.querySelector(".lose").style.display = "none";
   document.querySelector("input").value = "";
 
-  //tries = 0;
+  tries = 0;
   document.querySelector(".lives span").innerHTML = 5 - 0;
 
   word = wordpicker(wordList).split("");
@@ -152,10 +148,20 @@ document.addEventListener("DOMContentLoaded", function () {
   beginTheGameWithPlayer();
 });
 
+const gameOver = (amountOfAttempts) => {
+  return amountOfAttempts >= 5;
+};
+
+const incrementAttempts = (amountOfAttempts) => {
+  amountOfAttempts++;
+  return amountOfAttempts;
+};
+
 module.exports = {
-  wordpicker,
-  wordList,
-  theWord,
-  letters,
-  inputs
+  //wordpicker,
+  //wordList,
+  //theWord,
+  //letters,
+  gameOver,
+  incrementAttempts,
 };
