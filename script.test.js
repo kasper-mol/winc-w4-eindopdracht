@@ -1,7 +1,7 @@
 const {
     //wordpicker,
     //wordList,
-    //letters,
+    letters,
     //theWord,
     gameOver,
     incrementAttempts,
@@ -21,6 +21,11 @@ describe("Test to update the attempts", () => {
         let amountOfAttempts = 0;
         expect(incrementAttempts(amountOfAttempts)).toBe(amountOfAttempts + 1);
     });
+});
+
+test("is the wrongly guessed letter added to wrong letters", function () {
+    const expected = ['p',]
+    expect(letters(['t', 'o', 'e', 't', 'e', 'r'], ['e', 'o', "p"])).toEqual(expect.arrayContaining(expected))
 });
 
 describe("Test function that checks if game is over", () => {

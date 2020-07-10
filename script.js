@@ -161,7 +161,7 @@ module.exports = {
   //wordpicker,
   //wordList,
   //theWord,
-  //letters,
+  letters,
   gameOver,
   incrementAttempts,
 };
