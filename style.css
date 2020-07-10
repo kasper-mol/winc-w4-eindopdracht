@@ -28,13 +28,13 @@ body {
 }
 
 #interactions {
-  grid-column: 2;
-  grid-row: 3 / span 1;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
+ 	  grid-column: 2;
+  	  grid-row: 3 / span 1;
+    display: flex;
+  	  flex-flow: row wrap;
+   justify-content: center;
+  	  align-items: center;
+}	
 
 .inputfield {
   display: block;
@@ -56,7 +56,8 @@ body {
   display: block;
   border-radius: 5px;
   font-size: 18px;
-  margin: 0 10px;
+  margin-left:10px;
+  margin-top: 20px;
   width: 100px;
   height: 40px;
 }
@@ -73,6 +74,8 @@ body {
 }
 
 .lives {
+  flex: 1 100%;
+  text-align: center;
   font-size: 17.5px;
   margin-top: -4px;
 }
@@ -82,7 +85,7 @@ body {
   margin: 10px;
 }
 
-.the-word {
+.the_word {
   flex: 1 100%;
 }
 
@@ -111,12 +114,21 @@ body {
   z-index: 1;
 }
 
+.win,
+.lose {
+  display: none;	  
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  z-index: 1;
+}	
+
 .win img,
-.lose img {
-  width: 250px;
+.lose img {	
+  width: 250px;	 
   height: 200px;
   margin-top: 10px;
-}
+}	
 
 .win h2,
 .lose h2 {
