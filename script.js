@@ -40,14 +40,11 @@ function startGame() {
   loser.style.display = "none";
   confetti.style.display = "none";
   inputTextField.value = "";
-
   amountOfAttempts = 0;
   triedLetters = [];
   updateRemainingAttemptsDom(amountOfAttempts);
-
   chosenWord = wordpicker(wordList).split("");
   document.querySelector(".lose p span").innerHTML = `"${chosenWord.join("")}"`;
-
   theWord(chosenWord, triedLetters);
   letters(chosenWord, triedLetters);
 }
@@ -79,7 +76,6 @@ const theWord = function (word, inputLetterWords) {
     }
   });
   document.querySelector(".the_word").innerHTML = display.join(" ");
-  return display;
 };
 
 // Checks if a new letter is guessed
@@ -88,7 +84,6 @@ const guessLetter = function () {
   inputTextField.value = "";
   if (triedLetters.includes(letterTry) || letterTry === "") return;
   if (!chosenWord.includes(letterTry)) incrementAttempts();
-
   triedLetters.push(letterTry);
   theWord(chosenWord, triedLetters);
   letters(chosenWord, triedLetters);
