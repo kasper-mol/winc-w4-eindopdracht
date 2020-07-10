@@ -108,12 +108,14 @@ body {
   grid-column: 2;
   grid-row: 2;
   text-align: center;
+  z-index: 1;
 }
 
 .win img,
 .lose img {
   width: 250px;
   height: 200px;
+  margin-top: 10px;
 }
 
 .win h2,
@@ -133,6 +135,8 @@ body {
   grid-column: 2;
   grid-row: 2;
   align-items: center;
+  background-color: white;
+  z-index: 0;
 }
 
 #hangman img {
@@ -143,20 +147,20 @@ body {
 
 .guess:hover {
   color: white;
-  background-color: green;
+  background-color: #006400;
 }
 
 .restart:hover {
   color: white;
-  background-color: red;
+  background-color: #cb0000;
 }
 
 .win h2 {
-  color: red;
+  color: #cb0000;
 }
 
 .lose h2 {
-  color: blue;
+  color: #000080;
 }
 .confetti {
   width: 15px;
@@ -166,6 +170,7 @@ body {
   left: 50%;
   animation: confetti 5s ease-in-out -2s infinite;
   transform-origin: left top;
+  z-index: 1;
 }
 .confetti:nth-child(1) {
   background-color: #f2d74e;
@@ -239,17 +244,18 @@ body {
 .game-over {
   grid-column: 1 / span 3;
   grid-row: 2;
-  background-color: red;
+  background-color: #cb0000;
   color: black;
-  height: 250px;
-  width: 250px;
-  margin-left: 100px;
-  display: none;
+  height: 225px;
+  width: 225px;
+  margin: 0 0 0 260px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5em;
+  font-size: 2em;
   border-radius: 50%;
   animation: game-over 5s ease-in-out -2s infinite;
+  z-index: 1;
 }
 
 
