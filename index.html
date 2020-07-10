@@ -7,12 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Hangman</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
   <script defer type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
   <div id="body-wrap">
+
     <div id="confetti-wrap" style="display: none;">
       <div class="confetti"></div>
       <div class="confetti"></div>
@@ -26,6 +27,9 @@
       <div class="confetti"></div>
       <div class="confetti"></div>
     </div>
+    <div class="game-over">
+      <p>Game Over!</p>
+    </div>
     <div id="header">
       <h1>Simple 'Hangman' Game by Cindy & Kasper</h1>
       <p>[no people will actually be harmed during this game]</p>
@@ -33,8 +37,6 @@
     <div class="win">
       <img src="win.gif" />
       <h2>You won!</h2>
-
-
     </div>
 
     <div class="lose">
@@ -65,11 +67,8 @@
       <img id="armen" src="armen.png" />
       <img id="linkerbeen" src="linkerbeen.png" />
       <img id="rechterbeen" src="rechterbeen.png" />
-
     </div>
-
   </div>
-
 </body>
 
 </html>

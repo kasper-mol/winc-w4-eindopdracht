@@ -4,7 +4,8 @@ let amountOfAttempts = 0;
 const inputTextField = document.querySelector("input");
 const winner = document.querySelector(".win");
 const loser = document.querySelector(".lose");
-const confetti = document.querySelector("#confetti-wrap")
+const confetti = document.querySelector("#confetti-wrap");
+const noLivesLeft = document.querySelector(".game-over");
 
 
 // List of possible words
@@ -39,6 +40,7 @@ function startGame() {
   winner.style.display = "none";
   loser.style.display = "none";
   confetti.style.display = "none";
+  noLivesLeft.style.display = "none";
   inputTextField.value = "";
   amountOfAttempts = 0;
   triedLetters = [];
@@ -157,7 +159,9 @@ const gameOver = (attempts) => {
 //Function that shows the losing GIF on the DOM
 const showGifYouLost = function () {
   document.querySelector(".lose").style.display = "block";
-  hang
+  hangman.style.display = "none";
+  noLivesLeft.style.display = "block";
+
 };
 
 module.exports = {
