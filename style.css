@@ -198,10 +198,6 @@ body {
   animation: game-over 5s ease-in-out -2s infinite;
 }
 
-.game-over p {
-  padding-top: 75px;
-  padding-left: 25px;
-}
 
 @keyframes game-over {
   0% {

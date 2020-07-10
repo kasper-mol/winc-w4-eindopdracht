@@ -170,7 +170,7 @@ const gameOver = (attempts) => {
 const showGifYouLost = function () {
   document.querySelector(".lose").style.display = "block";
   hangmanReset();
-  noLivesLeft.style.display = "block";
+  noLivesLeft.style.display = "flex";
 
 };
 
