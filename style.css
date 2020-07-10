@@ -95,6 +95,7 @@ background-color: aliceblue;
   color: blue;
 }
 .confetti {
+  display: none;
   width: 15px;
   height: 15px;
   background-color: #f2d74e;
