@@ -49,6 +49,7 @@ function startGame() {
   winner.style.display = "none";
   loser.style.display = "none";
   confetti.style.display = "none";
+  hangmanReset();
   noLivesLeft.style.display = "none";
   inputTextField.value = "";
   amountOfAttempts = 0;
