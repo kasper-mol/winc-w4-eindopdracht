@@ -12,11 +12,10 @@ const {
 });
 
 test("does the word contain the letter", function () {
-  console.log(theWord(["t", "o", "e", "t", "e", "r"], ["e", "b", "r"]));
-  expect(
-    theWord(["t", "o", "e", "t", "e", "r"], ["e", "b", "r"])
-  ).not.toBeNull();
+    const expected = ['e', 'o']
+    expect(theWord(['t', 'o', 'e', 't', 'e', 'r'], ['e', 'o'])).toEqual(expect.arrayContaining(expected))
 }); */
+
 describe("Test to update the attempts", () => {
     test("If the attempts increment", function () {
         let amountOfAttempts = 0;
