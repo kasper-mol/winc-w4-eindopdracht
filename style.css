@@ -169,12 +169,12 @@ body {
 }
 .confetti:nth-child(1) {
   background-color: #f2d74e;
-  left: 10%;
+  left: 25%;
   animation-delay: 0;
 }
 .confetti:nth-child(2) {
   background-color: #95c3de;
-  left: 20%;
+  left: 27%;
   animation-delay: -5s;
 }
 .confetti:nth-child(3) {
