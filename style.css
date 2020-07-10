@@ -163,7 +163,6 @@ body {
   color: #000080;
 }
 .confetti {
-  display: none;
   width: 15px;
   height: 15px;
   background-color: #f2d74e;
@@ -175,12 +174,12 @@ body {
 }
 .confetti:nth-child(1) {
   background-color: #f2d74e;
-  left: 10%;
+  left: 25%;
   animation-delay: 0;
 }
 .confetti:nth-child(2) {
   background-color: #95c3de;
-  left: 20%;
+  left: 27%;
   animation-delay: -5s;
 }
 .confetti:nth-child(3) {
@@ -258,6 +257,7 @@ body {
   animation: game-over 5s ease-in-out -2s infinite;
   z-index: 1;
 }
+
 
 @keyframes game-over {
   0% {

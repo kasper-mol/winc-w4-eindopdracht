@@ -1,81 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Hangman</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto"
-    />
-    <script defer type="text/javascript" src="script.js"></script>
-  </head>
 
-  <body>
-    <div id="body-wrap">
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
-      <div class="confetti"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Hangman</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <script defer type="text/javascript" src="script.js"></script>
+</head>
 
-      <div class="game-over"><p>Game Over!</p></div>
+<body>
+  <div id="body-wrap">
 
-      <div id="header">
-        <h1>Simple 'Hangman' Game by Cindy & Kasper</h1>
-        <p>[no people will actually be harmed during this game]</p>
-      </div>
-
-      <div class="win">
-        <img src="win.gif" />
-        <h2>You won!</h2>
-      </div>
-
-      <div class="lose">
-        <img src="lose.gif" />
-        <h2>You lost..</h2>
-        <p>The chosen word was: <span></span></p>
-      </div>
-
-      <div class="information-wrapper">
-        <div id="interactions">
-          <input
-            class="inputfield"
-            type="text"
-            placeholder="Guess a letter"
-            maxlength="1"
-          />
-          <div class="buttons">
-            <button class="guess">Guess</button>
-            <button class="restart">Restart</button>
-          </div>
-        </div>
-        <div id="game-info">
-          <h2>Correctly guessed letters:</h2>
-          <div class="the_word">_ _ _ _ _</div>
-          <div class="wrong-letters">
-            <h3>Incorrectly guessed letters:</h3>
-            <div class="guessed_letters"></div>
-          </div>
-          <p class="lives">You have <span></span> lives remaining</p>
-        </div>
-      </div>
-
-      <div id="hangman">
-        <img id="hoofd" src="hoofd.png" />
-        <img id="lijf" src="lijf.png" />
-        <img id="armen" src="armen.png" />
-        <img id="linkerbeen" src="linkerbeen.png" />
-        <img id="rechterbeen" src="rechterbeen.png" />
-      </div>
+    <div id="confetti-wrap" style="display: none;">
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
+      <div class="confetti"></div>
     </div>
-  </body>
+    <div class="game-over">
+      <p>Game Over!</p>
+    </div>
+    <div id="header">
+      <h1>Simple 'Hangman' Game by Cindy & Kasper</h1>
+      <p>[no people will actually be harmed during this game]</p>
+    </div>
+    <div class="win">
+      <img src="win.gif" />
+      <h2>You won!</h2>
+    </div>
+
+    <div class="lose">
+      <img src="lose.gif" />
+      <h2>You lost..</h2>
+      <p>The chosen word was: <span></span></p>
+    </div>
+    <div class="information-wrapper">
+    <div id="interactions">
+      <h2>Type a letter and hit guess to start</h2>
+      <input class="inputfield" type="text" placeholder="Guess a letter" maxlength="1" />
+      <button class="guess">Guess</button>
+      <button class="restart">Restart</button>
+    </div>
+    <div id="game-info">
+      <h2>Correctly guessed letters:</h2>
+      <div class="the_word">_ _ _ _ _</div>
+      <h3>Incorrectly guessed letters:</h3>
+      <div class="guessed_letters"></div>
+    </div>
+    <div id="lives">
+      <p class="lives">You have <span></span> lives remaining</p>
+    </div>
+  </div>
+
+    <div id="hangman">
+      <img id="hoofd" src="hoofd.png" />
+      <img id="lijf" src="lijf.png" />
+      <img id="armen" src="armen.png" />
+      <img id="linkerbeen" src="linkerbeen.png" />
+      <img id="rechterbeen" src="rechterbeen.png" />
+    </div>
+  </div>
+</body>
+
 </html>
