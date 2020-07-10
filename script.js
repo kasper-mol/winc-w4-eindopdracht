@@ -34,6 +34,15 @@ const arms = document.querySelector("#armen");
 const leftLeg = document.querySelector("#linkerbeen");
 const rightLeg = document.querySelector("#rechterbeen");
 
+// Function to reset hangman
+const hangmanReset = () => {
+  head.style.display = "none";
+  body.style.display = "none";
+  arms.style.display = "none";
+  leftLeg.style.display = "none";
+  rightLeg.style.display = "none";
+}
+
 
 // Function for starting the game on load or when pressing the reset button
 function startGame() {
@@ -147,7 +156,8 @@ const gameWon = function (word, triedLettersArray) {
 //Function that shows the winning GIF on the DOM
 const showGifYouWon = function () {
   document.querySelector(".win").style.display = "block";
-  hangman.style.display = "none";
+  hangmanReset();
+
   confetti.style.display = "block";
 };
 
@@ -159,7 +169,7 @@ const gameOver = (attempts) => {
 //Function that shows the losing GIF on the DOM
 const showGifYouLost = function () {
   document.querySelector(".lose").style.display = "block";
-  hangman.style.display = "none";
+  hangmanReset();
   noLivesLeft.style.display = "block";
 
 };
