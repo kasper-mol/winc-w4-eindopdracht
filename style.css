@@ -1,89 +1,145 @@
 body {
   background-color: aliceblue;
+  font-weight: bold;
 }
 
 #body-wrap {
   display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(9, 100px);
-  grid-gap: 10px;
+  grid-template-columns: 2fr 5fr 2fr;
+  grid-template-rows: 1fr 3fr 1.6fr 1.6fr;
   font-family: "Roboto", sans-serif;
   background-color: aliceblue;
 }
 
 #header {
-  grid-column: 3 / span 5;
+  grid-column: 2;
   text-align: center;
+  background-color: #84c3be;
+}
+
+#header h1 {
+  margin: 10px 0;
+}
+
+.information-wrapper {
+  grid-column: 2;
+  grid-row: 3 / span 2;
+  background-color: #84c3be;
 }
 
 #interactions {
-  grid-column: 7 / span 3;
-  grid-row: 3 / span 3;
-  background-color: rgb(95, 95, 95);
-  color: azure;
+  grid-column: 2;
+  grid-row: 3 / span 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputfield {
+  display: block;
+  height: 35px;
+  width: 400px;
+  margin-top: 20px;
+}
+
+.buttons {
+  flex: 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.guess,
+.restart {
+  display: block;
+  border-radius: 5px;
+  font-size: 18px;
+  margin: 0 10px;
+  width: 100px;
+  height: 40px;
 }
 
 #game-info {
-  grid-column: 1 / span 3;
-  grid-row: 6 / span 1;
-  justify-self: center;
+  grid-column: 2;
+  grid-row: 4 / span 1;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
 }
 
-#lives {
-  grid-column: 7 / span 3;
-  grid-row: 6 / span 1;
-  justify-self: center;
-  font-size: 24px;
+.lives {
+  font-size: 17.5px;
+  margin-top: -4px;
+}
+
+#game-info h2 {
+  flex: 1 100%;
+  margin: 10px;
+}
+
+.the-word {
+  flex: 1 100%;
+}
+
+.wrong-letters {
+  flex: 1 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrong-letters {
+  margin-top: 15px;
+}
+
+.guessed_letters {
+  margin-left: 25px;
+  font-size: 20px;
 }
 
 .win,
 .lose {
   display: none;
-  grid-column: 2 / span 3;
-  grid-row: 3 / span 3;
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+}
+
+.win img,
+.lose img {
+  width: 250px;
+  height: 200px;
+}
+
+.win h2,
+.lose h2 {
+  margin: 5px 0;
+}
+
+.lose p {
+  margin-top: 4px;
+  font-size: 20px;
 }
 
 #hangman {
-  grid-column: 2 / span 3;
-  grid-row: 3 / span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2;
+  grid-row: 2;
+  align-items: center;
+  background-color: #eaebeb;
 }
 
 #hangman img {
   height: 200px;
   width: 300px;
   position: absolute;
-}
-
-.inputfield {
-  display: block;
-  padding: 5px;
-  width: 40%;
-  margin: auto;
-}
-
-#interactions h2 {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.guess {
-  display: block;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.restart {
-  display: block;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 18px;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .guess:hover {
@@ -183,17 +239,17 @@ body {
 }
 
 .game-over {
-  grid-column: 4 / span 3;
-  grid-row: 4 / span 3;
+  grid-column: 1 / span 3;
+  grid-row: 2;
   background-color: red;
   color: black;
-  height: 300px;
-  width: 300px;
-  margin: auto auto;
+  height: 250px;
+  width: 250px;
+  margin-left: 100px;
   display: none;
   justify-content: center;
   align-items: center;
-  font-size: 3em;
+  font-size: 2.5em;
   border-radius: 50%;
   animation: game-over 5s ease-in-out -2s infinite;
 }
