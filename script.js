@@ -4,6 +4,8 @@ let amountOfAttempts = 0;
 const inputTextField = document.querySelector("input");
 const winner = document.querySelector(".win");
 const loser = document.querySelector(".lose");
+const confetti = document.querySelector("#confetti-wrap")
+
 
 // List of possible words
 const wordList = [
@@ -23,10 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
   startGame();
 });
 
+// Getting individual hangman parts
+const hangman = document.querySelector("#hangman")
+const head = document.querySelector("#hoofd");
+const body = document.querySelector("#lijf");
+const arms = document.querySelector("#armen");
+const leftLeg = document.querySelector("#linkerbeen");
+const rightLeg = document.querySelector("#rechterbeen");
+
+
 // Function for starting the game on load or when pressing the reset button
 function startGame() {
   winner.style.display = "none";
   loser.style.display = "none";
+  confetti.style.display = "none";
   inputTextField.value = "";
 
   amountOfAttempts = 0;
@@ -95,9 +107,32 @@ const checkForWinningOrLosing = function () {
 //Function that increments the amount of attempts
 const incrementAttempts = () => {
   amountOfAttempts++;
+  drawMan(amountOfAttempts)
   updateRemainingAttemptsDom(amountOfAttempts);
   return amountOfAttempts;
 };
+
+// Function for making hangman apear
+const drawMan = (amountOfAttempts) => {
+  switch (amountOfAttempts) {
+    case 1:
+      head.style.display = "block";
+      break;
+    case 2:
+      body.style.display = "block";
+      break;
+    case 3:
+      arms.style.display = "block";
+      break;
+    case 4:
+      leftLeg.style.display = "block";
+      break;
+    case 5:
+      rightLeg.style.display = "block";
+      break;
+
+  }
+}
 
 //Function that updates the remaining attempts on the DOM
 const updateRemainingAttemptsDom = function (attempts) {
@@ -115,6 +150,8 @@ const gameWon = function (word, triedLettersArray) {
 //Function that shows the winning GIF on the DOM
 const showGifYouWon = function () {
   document.querySelector(".win").style.display = "block";
+  hangman.style.display = "none";
+  confetti.style.display = "block";
 };
 
 //Function that returns true is there were 5 attempts or more
@@ -125,6 +162,7 @@ const gameOver = (attempts) => {
 //Function that shows the losing GIF on the DOM
 const showGifYouLost = function () {
   document.querySelector(".lose").style.display = "block";
+  hang
 };
 
 module.exports = {
