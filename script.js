@@ -65,7 +65,7 @@ const letters = function (word, inputs) {
     return !word.includes(letter);
   };
   let wrongLetters = inputs.filter(letterCheck);
-  //document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
+  document.querySelector(".guessed_letters").innerHTML = wrongLetters.join(" ");
   return wrongLetters;
 };
 
@@ -89,7 +89,7 @@ const guessLetter = function () {
     return;
   } */
 
-  //const input1 = document.querySelector("input").value;
+  const input1 = document.querySelector("input").value;
   document.querySelector("input").value = "";
   if (inputs.includes(input1) || input1 === "") {
     return;
