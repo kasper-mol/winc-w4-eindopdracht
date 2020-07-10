@@ -43,6 +43,16 @@ background-color: aliceblue;
   grid-row: 3/ span 3;
 }
 
+#hangman {
+  grid-column: 2 / span 3 ;
+  grid-row: 3/ span 3;
+}
+
+#hangman img {
+  height: 200px;
+  width: 300px;
+  position: absolute;
+}
 
 .inputfield {
   display: block;
@@ -84,8 +94,6 @@ background-color: aliceblue;
   color: white;
   background-color: red;
 }
-
-
 
 .win h2 {
   color: red;
